@@ -4,9 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   staged: {
-    // Format only: type-aware lint cannot resolve @types/node inside the
-    // staged sandbox (vite-plus 0.2.5); `vp check` runs in CI instead.
-    "*": "vp fmt",
+    // Files must be covered by a tsconfig `include`, or subset checks fail
+    // with spurious TS2591 (voidzero-dev/vite-plus#1104, tsgolint#904).
+    "*": "vp check --fix",
   },
   fmt: {},
   lint: {
