@@ -13,25 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
         with:
-          version: 10.29.3
+          cache: true
+          run-install: true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: package.json
-          cache: pnpm
+      - name: Check (format, lint, type-check)
+        run: vp check
 
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Lint ESLint
-        run: pnpm lint:eslint
-
-      - name: Lint Prettier
-        run: pnpm lint:prettier
-
-      - name: TypeCheck
-        run: pnpm typecheck
+      - name: TypeCheck (tsc)
+        run: vp run typecheck

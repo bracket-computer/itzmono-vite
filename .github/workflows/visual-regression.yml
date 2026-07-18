@@ -11,25 +11,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
         with:
-          version: 10.29.3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: package.json
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          cache: true
+          run-install: true
 
       - name: Install Playwright browser
-        run: pnpm exec playwright install chromium
+        run: vp exec playwright install chromium
 
       - name: Run visual regression tests
-        run: pnpm test:visual
+        run: vp run test:visual
 
       - name: Upload Playwright report
         if: always()
