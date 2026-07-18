@@ -8,6 +8,7 @@ export default defineConfig({
   expect: {
     toHaveScreenshot: {
       pathTemplate: "{testDir}/{testFilePath}-snapshots/{arg}{ext}",
+      animations: "disabled",
     },
   },
   use: {
@@ -18,10 +19,9 @@ export default defineConfig({
     timezoneId: "UTC",
     colorScheme: "light",
     deviceScaleFactor: 1,
-    animations: "disabled",
   },
   webServer: {
-    command: "pnpm dev:vite --host 127.0.0.1 --port 4173",
+    command: "vp dev --host 127.0.0.1 --port 4173",
     port: 4173,
     reuseExistingServer: !process.env.CI,
     timeout: 120000,

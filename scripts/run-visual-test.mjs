@@ -8,7 +8,7 @@ const result = spawnSync("playwright", ["test", ...process.argv.slice(2)], {
 
 if (result.status !== 0) {
   console.error(
-    "Visual regression detected. If this change is intentional, run: pnpm test:visual:update",
+    "Visual regression detected. If this change is intentional, run: vp run test:visual:update",
   );
   process.exit(result.status ?? 1);
 }
