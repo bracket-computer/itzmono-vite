@@ -21,7 +21,7 @@ export default defineConfig({
     deviceScaleFactor: 1,
   },
   webServer: {
-    command: "pnpm dev:vite --host 127.0.0.1 --port 4173",
+    command: "vp dev --host 127.0.0.1 --port 4173",
     port: 4173,
     reuseExistingServer: !process.env.CI,
     timeout: 120000,

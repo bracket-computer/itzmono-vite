@@ -4,7 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   staged: {
-    "*": "vp check --fix",
+    // Format only: type-aware lint cannot resolve @types/node inside the
+    // staged sandbox (vite-plus 0.2.5); `vp check` runs in CI instead.
+    "*": "vp fmt",
   },
   fmt: {},
   lint: {
