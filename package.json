@@ -14,15 +14,15 @@
   "dependencies": {
     "@blueprintjs/core": "6.8.0",
     "@blueprintjs/icons": "6.5.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "tailwindcss": "4.1.18"
   },
   "devDependencies": {
     "@playwright/test": "1.58.2",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
-    "@types/react": "19.2.9",
+    "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.3",
     "autoprefixer": "10.4.24",
